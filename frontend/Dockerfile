@@ -7,8 +7,6 @@ COPY package*.json ./
 
 RUN npm install
 
-EXPOSE 4000
-
 COPY . . 
 
 RUN npm run build  # creates /usr/src/app/build
