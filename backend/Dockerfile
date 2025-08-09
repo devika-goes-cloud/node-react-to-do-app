@@ -1,4 +1,16 @@
-FROM node:14-alpine3.12
+
+FROM node:14-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install 
+
 COPY . .
+
+RUN npm run build
+
 EXPOSE 4000
-CMD ["node","index.js"]
+
+ENTRYPOINT ["node" , "index.js"]
